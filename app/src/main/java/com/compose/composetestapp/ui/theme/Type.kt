@@ -9,7 +9,6 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.sp
 import com.compose.composetestapp.R
 
-// Set of Material typography styles to start with
 
 val robotoFontFamily = FontFamily(
     Font(R.font.roboto_light, FontWeight.Light),
@@ -19,6 +18,11 @@ val robotoFontFamily = FontFamily(
 )
 
 val Typography = Typography(
+    caption = TextStyle(
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
+    ),
     body1 = TextStyle(
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Normal,
@@ -27,6 +31,7 @@ val Typography = Typography(
     body2 = TextStyle(
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Normal,
+        lineHeight = 24.sp,
         fontSize = 16.sp
     ),
     subtitle1 = TextStyle(
@@ -51,20 +56,11 @@ val Typography = Typography(
         fontSize = 16.sp,
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Medium,
+    ),
+    h4 = TextStyle(
+        fontSize = 24.sp,
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.Bold,
+        lineHeight = 29.sp
     )
-
 )
-
-
-/* Other default text styles to override
-button = TextStyle(
-    fontFamily = FontFamily.Default,
-    fontWeight = FontWeight.W500,
-    fontSize = 14.sp
-),
-caption = TextStyle(
-    fontFamily = FontFamily.Default,
-    fontWeight = FontWeight.Normal,
-    fontSize = 12.sp
-)
-*/
