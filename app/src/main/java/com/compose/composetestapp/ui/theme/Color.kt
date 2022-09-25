@@ -19,3 +19,6 @@ val helpColorStart = Color(0xFF254E83)
 val helpColorEnd = Color(0xFF3A77B1)
 val mapColorStart = Color(0xFF485563)
 val mapColorEnd = Color(0xFF29323C)
+
+val buttonBackground = Color(0xFFF2F8FF)
+val buttonContent = Color(0xFF4096FB)

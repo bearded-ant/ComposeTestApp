@@ -1,6 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ComposeTestApp</string>
     <string name="home_screen" translatable="false">Главная</string>
+    <string name="buildings_and_numbers" translatable="false">Домики и номера</string>
+    <string name="show_all" translatable="false">Показать все (20)</string>
     <string name="app_fish">Уважаемые гости будем рады видеть Вас в нашей уютной сауне! И предоставить Вам отметить самый долгожданный праздник года, Новый год и предновогоднии праздники !!!
 
 И предложить Вам услуги приятного времяпровождения и празднования любого праздника!

@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,6 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.compose.composetestapp.R
+import com.compose.composetestapp.ui.cards.HugeCardUi
+import com.compose.composetestapp.ui.cards.SmallCardUi
 import com.compose.composetestapp.ui.theme.*
 
 class FirstScreenUi {
@@ -25,13 +28,13 @@ class FirstScreenUi {
         val gradientHelp = Brush.horizontalGradient(listOf(helpColorStart, helpColorEnd))
         val gradientMap = Brush.horizontalGradient(listOf(mapColorStart, mapColorEnd))
 
-        Column() {
+        Column(Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 16.dp)) {
             Text(
                 text = stringResource(id = R.string.home_screen),
                 style = MaterialTheme.typography.h3
             )
+            Spacer(modifier = Modifier.height(24.dp))
             Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
-
                 GradientButton(
                     text = "+29C",
                     gradient = gradientWeather,
@@ -56,6 +59,32 @@ class FirstScreenUi {
                     contentDescription = "map"
                 )
             }
+            Spacer(modifier = Modifier.height(24.dp))
+            Text(
+                text = stringResource(id = R.string.buildings_and_numbers),
+                style = MaterialTheme.typography.h2
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            //todo загрузить контент
+            Column() {
+                for (i in 1..5) {
+                    SmallCardUi().SmallCard()
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
+            }
+            Button(
+                onClick = { /*TODO*/ },
+                colors = ButtonDefaults.buttonColors(backgroundColor = buttonBackground),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(id = R.string.show_all),
+                    color = buttonContent,
+                    style = MaterialTheme.typography.subtitle2
+                )
+            }
+            Spacer(modifier = Modifier.height(24.dp))
+            HugeCardUi().HugeCard()
         }
     }
 
@@ -71,7 +100,9 @@ class FirstScreenUi {
         Button(
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
             contentPadding = PaddingValues(),
-            onClick = { onClick() })
+            onClick = { onClick() },
+            modifier = Modifier.height(40.dp)
+        )
         {
             Row(
                 modifier = Modifier
