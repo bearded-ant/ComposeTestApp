@@ -28,17 +28,14 @@ class SecondScreenUi {
     fun SecondScreen() {
 
         Column(Modifier.verticalScroll(rememberScrollState())) {
-            setImage()
-            Spacer(modifier = Modifier.height(16.dp))
-            setTextFields()
+            SetImage()
+            SetTextFields()
         }
-        setButtonBack()
+        SetButtonBack()
     }
 
-
-
     @Composable
-    private fun setButtonBack() {
+    private fun SetButtonBack() {
         Column(Modifier.padding(start = 20.dp, top = 44.dp)) {
             TextButton(
                 onClick = { /*TODO*/ },
@@ -59,7 +56,7 @@ class SecondScreenUi {
     }
 
     @Composable
-    private fun setTextFields() {
+    private fun SetTextFields() {
         Column(Modifier.padding(horizontal = 16.dp)) {
             Text(text = "20.10.2022", style = MaterialTheme.typography.caption)
             Text(
@@ -82,7 +79,7 @@ class SecondScreenUi {
     }
 
     @Composable
-    private fun setImage() {
+    private fun SetImage() {
         Image(
             bitmap = ImageBitmap.imageResource(id = R.drawable.no_image),
             contentDescription = "",
@@ -91,6 +88,7 @@ class SecondScreenUi {
                 .fillMaxWidth()
                 .height(304.dp)
         )
+        Spacer(modifier = Modifier.height(16.dp))
     }
 
 
