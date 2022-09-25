@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.compose.composetestapp.ui.cards.*
+import com.compose.composetestapp.ui.screen.FirstScreenUi
 import com.compose.composetestapp.ui.screen.SecondScreenUi
 import com.compose.composetestapp.ui.theme.ComposeTestAppTheme
 
@@ -24,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SecondScreenUi().SecondScreen()
+                    FirstScreenUi().FirstScreen()
+//                    SecondScreenUi().SecondScreen()
 //
 //                    Column(
 //                        modifier = Modifier

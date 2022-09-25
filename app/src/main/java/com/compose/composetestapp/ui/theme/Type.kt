@@ -15,6 +15,7 @@ val robotoFontFamily = FontFamily(
     Font(R.font.roboto_regular, FontWeight.Normal),
     Font(R.font.roboto_medium, FontWeight.Medium),
     Font(R.font.roboto_bold, FontWeight.Bold),
+    Font(R.font.roboto_regular, FontWeight.SemiBold)
 )
 
 val Typography = Typography(
@@ -61,6 +62,18 @@ val Typography = Typography(
         fontSize = 24.sp,
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Bold,
+        lineHeight = 29.sp
+    ),
+    h3 = TextStyle(
+        fontSize = 20.sp,
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 24.sp
+    ),
+    h2 = TextStyle(
+        fontSize = 24.sp,
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.Normal,
         lineHeight = 29.sp
     )
 )

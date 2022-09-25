@@ -12,3 +12,10 @@ val MyGrayDark = Color(0xFF333333)
 
 val GraySubtitle = Color(0xFFA6A6A6)
 val RedSubtitle = Color(0xFFE54131)
+
+val weatherColorStart = Color(0xFFFE8C00)
+val weatherColorEnd = Color(0xFFF83600)
+val helpColorStart = Color(0xFF254E83)
+val helpColorEnd = Color(0xFF3A77B1)
+val mapColorStart = Color(0xFF485563)
+val mapColorEnd = Color(0xFF29323C)
