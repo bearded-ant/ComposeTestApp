@@ -28,35 +28,17 @@ class SecondScreenUi {
     fun SecondScreen() {
 
         Column(Modifier.verticalScroll(rememberScrollState())) {
-            Image(
-                bitmap = ImageBitmap.imageResource(id = R.drawable.no_image),
-                contentDescription = "",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(304.dp)
-            )
+            setImage()
             Spacer(modifier = Modifier.height(16.dp))
-            Column(Modifier.padding(horizontal = 16.dp)) {
-                Text(text = "20.10.2022", style = MaterialTheme.typography.caption)
-                Text(
-                    text = "Двухэтажная Сауна! Бассейн, Бильярд, Караоке! ВеникиАкция! Час 850",
-                    style = MaterialTheme.typography.h4
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Spacer(
-                    modifier = Modifier
-                        .border(Dp.Hairline, MaterialTheme.colors.surface)
-                        .fillMaxWidth()
-                        .height(0.5.dp)
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = stringResource(id = R.string.app_fish),
-                    style = MaterialTheme.typography.body2
-                )
-            }
+            setTextFields()
         }
+        setButtonBack()
+    }
+
+
+
+    @Composable
+    private fun setButtonBack() {
         Column(Modifier.padding(start = 20.dp, top = 44.dp)) {
             TextButton(
                 onClick = { /*TODO*/ },
@@ -74,6 +56,41 @@ class SecondScreenUi {
                 )
             }
         }
+    }
+
+    @Composable
+    private fun setTextFields() {
+        Column(Modifier.padding(horizontal = 16.dp)) {
+            Text(text = "20.10.2022", style = MaterialTheme.typography.caption)
+            Text(
+                text = "Двухэтажная Сауна! Бассейн, Бильярд, Караоке! ВеникиАкция! Час 850",
+                style = MaterialTheme.typography.h4
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(
+                modifier = Modifier
+                    .border(Dp.Hairline, MaterialTheme.colors.surface)
+                    .fillMaxWidth()
+                    .height(0.5.dp)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = stringResource(id = R.string.app_fish),
+                style = MaterialTheme.typography.body2
+            )
+        }
+    }
+
+    @Composable
+    private fun setImage() {
+        Image(
+            bitmap = ImageBitmap.imageResource(id = R.drawable.no_image),
+            contentDescription = "",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(304.dp)
+        )
     }
 
 
