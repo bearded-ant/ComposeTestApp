@@ -1,4 +1,4 @@
-package com.compose.composetestapp.domain
+package com.compose.composetestapp.domain.main
 
 import com.google.gson.annotations.SerializedName
 
@@ -9,4 +9,4 @@ data class MainScreenDataModel(
     @SerializedName("data")
     val dataApi: ApiData,
 
-)
+    )

@@ -1,4 +1,4 @@
-package com.compose.composetestapp.domain
+package com.compose.composetestapp.domain.main
 
 data class ApiError(
     val code: String,

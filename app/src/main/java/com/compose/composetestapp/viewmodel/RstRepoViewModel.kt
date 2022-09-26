@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.compose.composetestapp.data.SharedRepository
-import com.compose.composetestapp.domain.ApiButton
-import com.compose.composetestapp.domain.MainScreenDataModel
+import com.compose.composetestapp.domain.main.MainScreenDataModel
 import kotlinx.coroutines.launch
 
 class RstRepoViewModel() : ViewModel() {
@@ -18,7 +17,7 @@ class RstRepoViewModel() : ViewModel() {
 
     fun refreshData() {
         viewModelScope.launch {
-            val response = repository.getAllData()
+            val response = repository.getMainScreenData()
             _allLiveData.postValue(response)
         }
     }

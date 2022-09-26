@@ -11,15 +11,23 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.compose.composetestapp.R
+import com.compose.composetestapp.domain.main.ApiContent
+import com.compose.composetestapp.domain.main.MainScreenDataModel
 import com.compose.composetestapp.ui.cards.BigCardUi
 import com.compose.composetestapp.ui.cards.HugeCardUi
 import com.compose.composetestapp.ui.cards.SmallCardUi
 import com.compose.composetestapp.ui.theme.*
 
-class FirstScreenUi {
+class FirstScreenUi(response: MainScreenDataModel) {
+    private val butTemperature = response.dataApi.buttons[0].title
+    private val firstDataBlock = response.dataApi.content[0]
+    private val secondDataBlock = response.dataApi.content[1]
+    private val thirdDataBlock = response.dataApi.content[2]
+    private val fourthDataBlock = response.dataApi.content[3]
+    private val fifthDataBlock = response.dataApi.content[4]
+
     @Composable
     fun FirstScreen() {
         ComposeTestAppTheme {
@@ -28,8 +36,8 @@ class FirstScreenUi {
                     .verticalScroll(rememberScrollState())
                     .padding(horizontal = 16.dp)
             ) {
-                Header()
-                FirstDataBlock()
+                Header(butTemperature)
+                FirstDataBlock(firstDataBlock)
                 SecondDataBlock()
                 ThirdDataBlock()
                 FourthDataBlock()
@@ -39,13 +47,13 @@ class FirstScreenUi {
     }
 
     @Composable
-    private fun Header() {
+    private fun Header(butTemperature: String) {
         Text(
             text = stringResource(id = R.string.home_screen),
             style = MaterialTheme.typography.h3
         )
         Spacer(modifier = Modifier.height(24.dp))
-        ShowTopGradientButtons()
+        ShowTopGradientButtons(butTemperature)
         Spacer(modifier = Modifier.height(24.dp))
     }
 
@@ -109,9 +117,9 @@ class FirstScreenUi {
     }
 
     @Composable
-    private fun FirstDataBlock() {
+    private fun FirstDataBlock(firstDataBlock: ApiContent) {
         Text(
-            text = stringResource(id = R.string.buildings_and_numbers),
+            text = firstDataBlock.title,
             style = MaterialTheme.typography.h2
         )
         Spacer(modifier = Modifier.height(16.dp))
@@ -137,7 +145,7 @@ class FirstScreenUi {
     }
 
     @Composable
-    private fun ShowTopGradientButtons() {
+    private fun ShowTopGradientButtons(butTemperature: String) {
 
         val gradientWeather = Brush.horizontalGradient(listOf(weatherColorStart, weatherColorEnd))
         val gradientHelp = Brush.horizontalGradient(listOf(helpColorStart, helpColorEnd))
@@ -145,7 +153,7 @@ class FirstScreenUi {
 
         Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
             GradientButton(
-                text = "+29C",
+                text = butTemperature,
                 gradient = gradientWeather,
                 icon = R.drawable.ic_baseline_wb_sunny_24,
                 onClick = {},
@@ -247,11 +255,11 @@ class FirstScreenUi {
         }
     }
 
-    @Preview(heightDp = 2000, showBackground = true)
-    @Composable
-    fun FirstScreenPreview() {
-        ComposeTestAppTheme {
-            FirstScreen()
-        }
-    }
+//    @Preview(heightDp = 2000, showBackground = true)
+//    @Composable
+//    fun FirstScreenPreview() {
+//        ComposeTestAppTheme {
+//            FirstScreen()
+//        }
+//    }
 }
