@@ -40,13 +40,12 @@ class FirstScreenUi {
 
     @Composable
     private fun Header() {
-
         Text(
             text = stringResource(id = R.string.home_screen),
             style = MaterialTheme.typography.h3
         )
         Spacer(modifier = Modifier.height(24.dp))
-        showTopGradientButtons()
+        ShowTopGradientButtons()
         Spacer(modifier = Modifier.height(24.dp))
     }
 
@@ -138,7 +137,7 @@ class FirstScreenUi {
     }
 
     @Composable
-    private fun showTopGradientButtons() {
+    private fun ShowTopGradientButtons() {
 
         val gradientWeather = Brush.horizontalGradient(listOf(weatherColorStart, weatherColorEnd))
         val gradientHelp = Brush.horizontalGradient(listOf(helpColorStart, helpColorEnd))
@@ -247,7 +246,6 @@ class FirstScreenUi {
             }
         }
     }
-
 
     @Preview(heightDp = 2000, showBackground = true)
     @Composable
