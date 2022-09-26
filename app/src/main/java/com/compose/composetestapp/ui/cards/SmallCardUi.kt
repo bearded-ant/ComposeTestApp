@@ -21,50 +21,48 @@ import com.compose.composetestapp.ui.theme.ComposeTestAppTheme
 class SmallCardUi {
     @Composable
     fun SmallCard() {
-        ComposeTestAppTheme() {
-            Row() {
-                Image(
-                    bitmap = ImageBitmap.imageResource(id = R.drawable.no_image),
-                    contentDescription = "",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .width(80.dp)
-                        .height(80.dp)
-                        .clip(RoundedCornerShape(8.dp))
-                        .border(
-                            1.dp,
-                            MaterialTheme.colors.surface,
-                            shape = RoundedCornerShape(8.dp)
-                        )
+        Row() {
+            Image(
+                bitmap = ImageBitmap.imageResource(id = R.drawable.no_image),
+                contentDescription = "",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .width(80.dp)
+                    .height(80.dp)
+                    .clip(RoundedCornerShape(8.dp))
+                    .border(
+                        1.dp,
+                        MaterialTheme.colors.surface,
+                        shape = RoundedCornerShape(8.dp)
+                    )
+            )
+            Column(
+                Modifier
+                    .padding(start = 16.dp)
+                    .align(CenterVertically)
+            ) {
+                Text(
+                    text = "Дом 2 гостей",
+                    style = MaterialTheme.typography.body1,
                 )
-                Column(
-                    Modifier
-                        .padding(start = 16.dp)
-                        .align(CenterVertically)
-                ) {
+                Text(
+                    text = "Молодежная",
+                    style = MaterialTheme.typography.body2
+                )
+                Row() {
                     Text(
-                        text = "Дом 2 гостей",
-                        style = MaterialTheme.typography.body1,
+                        text = "2500R",
+                        style = MaterialTheme.typography.subtitle1
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = "2000R",
+                        style = MaterialTheme.typography.subtitle2
                     )
                     Text(
-                        text = "Молодежная",
-                        style = MaterialTheme.typography.body2
+                        text = "/ночь",
+                        style = MaterialTheme.typography.subtitle2
                     )
-                    Row() {
-                        Text(
-                            text = "2500R",
-                            style = MaterialTheme.typography.subtitle1
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(
-                            text = "2000R",
-                            style = MaterialTheme.typography.subtitle2
-                        )
-                        Text(
-                            text = "/ночь",
-                            style = MaterialTheme.typography.subtitle2
-                        )
-                    }
                 }
             }
         }

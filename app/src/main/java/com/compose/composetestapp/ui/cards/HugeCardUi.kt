@@ -2,7 +2,10 @@ package com.compose.composetestapp.ui.cards
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -23,11 +26,6 @@ class HugeCardUi {
         ComposeTestAppTheme() {
 
             Column() {
-                Spacer(modifier = Modifier
-                    .height(1.dp)
-                    .border(1.dp, MaterialTheme.colors.surface)
-                    .fillMaxWidth())
-                Spacer(modifier = Modifier.height(23.dp))
                 Image(
                     bitmap = ImageBitmap.imageResource(id = R.drawable.no_image),
                     contentDescription = "",
@@ -54,11 +52,6 @@ class HugeCardUi {
                         maxLines = 2
                     )
                 }
-                Spacer(modifier = Modifier.height(23.dp))
-                Spacer(modifier = Modifier
-                    .height(1.dp)
-                    .border(1.dp, MaterialTheme.colors.surface)
-                    .fillMaxWidth())
             }
         }
     }
